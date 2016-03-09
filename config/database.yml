@@ -78,8 +78,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
   <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
   database: blog_production
-  username: blog
-  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
+  pool: 5
+  username: deploy
+  password: deploy
